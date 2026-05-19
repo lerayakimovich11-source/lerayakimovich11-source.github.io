@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-left: 5px solid #667eea;
+    padding-left: 20px;
+}
+
+h2 {
+    color: #764ba2;
+    margin: 20px 0 15px 0;
+}
+
+h3 {
+    color: #333;
+    margin: 15px 0 10px 0;
+}
+
+/* Стили для главного меню */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.menu-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-card:nth-child(1) { animation-delay: 0.1s; }
+.menu-card:nth-child(2) { animation-delay: 0.2s; }
+.menu-card:nth-child(3) { animation-delay: 0.3s; }
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.menu-card h2 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.menu-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+}
+
+/* Стили для списков лекций и лабораторных */
+.items-list {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.items-list li {
+    background: #f8f9fa;
+    margin: 15px 0;
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    border-left: 4px solid #667eea;
+}
+
+.items-list li:hover {
+    transform: translateX(10px);
+    background: #e9ecef;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.items-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    display: block;
+    font-weight: 500;
+}
+
+.items-list a:hover {
+    color: #667eea;
+}
+
+/* Кнопки навигации */
+.nav-buttons {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #e0e0e0;
+    text-align: center;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.button-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.button-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.button-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.button-success {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    color: white;
+}
+
+.button-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
+}
+
+.button:disabled, .button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Стили для теста */
+.question {
+    background: #f8f9fa;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s;
+}
+
+.question:hover {
+    background: #e9ecef;
+}
+
+.question h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.option {
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.option input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: none;
+}
+
+.result.show {
+    display: block;
+    animation: bounceIn 0.5s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Стили для содержимого лекций */
+.lecture-content {
+    line-height: 1.8;
+    color: #333;
+}
+
+.lecture-content p {
+    margin: 15px 0;
+}
+
+.lecture-content ul, .lecture-content ol {
+    margin: 15px 0 15px 30px;
+}
+
+.lecture-content li {
+    margin: 8px 0;
+}
+
+.info-box {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+    }
+    
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Счётчик прогресса */
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    width: 0%;
+    transition: width 0.3s;
+    animation: shimmer 1s infinite;
+}
+
+@keyframes shimmer {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Иконки */
+.icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 15px;
+}
